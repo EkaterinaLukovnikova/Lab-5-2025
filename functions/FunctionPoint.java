@@ -4,6 +4,7 @@ public class FunctionPoint {
     private double x;
     private double y;
 
+    
     public FunctionPoint(double x, double y) {
         this.x = x;
         this.y = y;
@@ -50,10 +51,8 @@ public class FunctionPoint {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        
-        FunctionPoint that = (FunctionPoint) o;
-        
-        return Double.compare(that.x, x) == 0 && Double.compare(that.y, y) == 0;
+        FunctionPoint otherPoint = (FunctionPoint) o;
+        return Math.abs(this.x - otherPoint.x) < 1e-9 && Math.abs(this.y - otherPoint.y) < 1e-9;
     }
 
     
